@@ -11,8 +11,9 @@ const app = express();
 // ✅ THIS ALONE IS ENOUGH
 app.use(
   cors({
-    origin: "http://localhost:8080",
+    origin: [ "http://localhost:8080", "https://godigitally.netlify.app/"],
     methods: ["GET", "POST", "OPTIONS"],
+    credentials: true,
   })
 );
 
