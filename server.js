@@ -8,7 +8,9 @@ const adminRoutes = require("./routes/admin");
 
 const app = express();
 
-// ✅ CORS MUST BE FIRST
+/* =======================
+   CORS (ENOUGH BY ITSELF)
+======================= */
 app.use(
   cors({
     origin: [
@@ -17,11 +19,8 @@ app.use(
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
   })
 );
-
-app.options("*", cors());
 
 app.use(express.json());
 
